@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.event.ValidatingRepositoryEventListener;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @SpringBootApplication
 public class YesItsTodoApplication implements RepositoryRestConfigurer {
@@ -16,7 +17,7 @@ public class YesItsTodoApplication implements RepositoryRestConfigurer {
 
 	@Bean
 	Validator validator() {
-		return null;
+		return new LocalValidatorFactoryBean();
 	}
 
 	@Override
