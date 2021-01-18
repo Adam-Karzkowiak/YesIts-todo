@@ -2,6 +2,7 @@ package com.app.YesItstodo.data;
 
 import com.app.YesItstodo.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -19,5 +20,5 @@ interface TaskRepository extends JpaRepository<Task,Integer> {
     void delete(Task task);
 
     @RestResource(path = "done", rel = "done")
-    List<Task>findByDoneIsTrue();
+    List<Task>findByDone(@Param ("state") boolean done);
 }
