@@ -1,6 +1,6 @@
 package com.app.YesItstodo.controller;
 
-import com.app.YesItstodo.data.TaskRepository;
+import com.app.YesItstodo.data.SqlTaskRepository;
 import com.app.YesItstodo.model.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +15,10 @@ import java.util.List;
 @RestController
 class TaskController {
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
-    private final TaskRepository repository;
+    private final SqlTaskRepository repository;
 
     @Autowired
-    TaskController(final TaskRepository repository) {
+    TaskController(final SqlTaskRepository repository) {
         this.repository = repository;
     }
 
