@@ -5,6 +5,7 @@ import com.app.YesItstodo.model.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ class TaskController {
     }
 
     @GetMapping("/tasks")
-    ResponseEntity<List<Task>> readAllTasks(Pageable page) {
+    ResponseEntity<Page<Task>> readAllTasks(Pageable page) {
         logger.info("Custom pageable");
         return ResponseEntity.ok(repository.findAll(page));
     }
