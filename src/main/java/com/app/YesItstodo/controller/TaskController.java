@@ -6,12 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -37,7 +33,8 @@ class TaskController {
     }
 
     @PutMapping("/tasks/{id}")
-    ResponseEntity<?> updateTask(@RequestBody @Valid Task task){
+    ResponseEntity<?> updateTask(@PathVariable int id, @RequestBody Task task){
+        if(repository.existsById(id))
         repository.save(task);
         return ResponseEntity.noContent().build();
     }
