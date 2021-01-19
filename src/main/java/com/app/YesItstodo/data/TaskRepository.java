@@ -11,7 +11,5 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 
-
-    @RestResource(path = "done", rel = "done")
     List<Task> findByDone(@Param("state") boolean done);
 }
