@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface SqlTaskRepository extends JpaRepository<Task, Integer> {
+interface SqlTaskRepository extends TaskRepository, JpaRepository<Task, Integer> {
 
     List<Task> findByDone(@Param("state") boolean done);
 }
