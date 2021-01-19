@@ -30,8 +30,8 @@ class TaskController {
     }
 
     @GetMapping("/tasks")
-    ResponseEntity<Page<Task>> readAllTasks(Pageable page) {
+    ResponseEntity<List<Task>> readAllTasks(Pageable page) {
         logger.info("Custom pageable");
-        return ResponseEntity.ok(repository.findAll(page));
+        return ResponseEntity.ok(repository.findAll(page).getContent());
     }
 }
