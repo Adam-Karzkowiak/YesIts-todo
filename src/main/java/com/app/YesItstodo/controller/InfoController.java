@@ -1,4 +1,7 @@
 package com.app.YesItstodo.controller;
 
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 class InfoController {
 }
