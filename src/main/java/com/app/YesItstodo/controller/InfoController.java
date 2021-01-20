@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 class InfoController {
-    @Value("${spring.datasource.url")
+    @Value("${spring.datasource.url}")
     private String url;
     @Value("${my.prop}")
     private String myProp;
