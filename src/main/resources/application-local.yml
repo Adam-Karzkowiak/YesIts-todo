@@ -5,4 +5,3 @@ spring:
       path: '/console'
   datasource:
     url: jdbc:h2:file:C:/JAVA/TODO/YesIts-todo/todo-db
-task.template.allowMultipleTasks: false
