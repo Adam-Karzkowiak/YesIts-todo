@@ -3,6 +3,7 @@ package com.app.YesItstodo.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,7 +15,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "incId")
+    @GenericGenerator(name = "incId",strategy = "increment")
     private int id;
     @NotBlank(message = "Tasks description must not be empty")
     private String description;
