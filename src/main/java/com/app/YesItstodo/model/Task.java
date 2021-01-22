@@ -25,6 +25,7 @@ public class Task {
     private boolean done;
     private LocalDateTime deadline;
     private LocalDateTime createdOn;
+    private LocalDateTime updatedOn;
 
 
 }
