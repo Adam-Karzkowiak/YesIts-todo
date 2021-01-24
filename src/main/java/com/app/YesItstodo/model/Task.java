@@ -37,4 +37,11 @@ public class Task {
         updatedOn=LocalDateTime.now();
     }
 
+    public void updateFrom(final Task source){
+        description=source.description;
+        done=source.done;
+        deadline=source.deadline;
+
+    }
+
 }
