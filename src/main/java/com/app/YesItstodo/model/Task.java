@@ -32,4 +32,9 @@ public class Task {
         createdOn=LocalDateTime.now();
     }
 
+    @PreUpdate
+    void preMerge(){
+        updatedOn=LocalDateTime.now();
+    }
+
 }
