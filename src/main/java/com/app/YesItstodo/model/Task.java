@@ -27,5 +27,9 @@ public class Task {
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 
+    @PrePersist
+    void prePersist(){
+        createdOn=LocalDateTime.now();
+    }
 
 }
