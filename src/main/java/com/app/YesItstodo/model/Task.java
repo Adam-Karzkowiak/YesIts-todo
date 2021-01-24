@@ -1,9 +1,6 @@
 package com.app.YesItstodo.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.apache.tomcat.jni.Local;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,7 +21,11 @@ public class Task {
     private String description;
     private boolean done;
     private LocalDateTime deadline;
-    @Access(private) private LocalDateTime createdOn;
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
+    private LocalDateTime createdOn;
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
     private LocalDateTime updatedOn;
 
     @PrePersist
