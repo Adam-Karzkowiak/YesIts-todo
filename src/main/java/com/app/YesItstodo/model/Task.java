@@ -1,5 +1,6 @@
 package com.app.YesItstodo.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,8 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class Task {
     @Id
@@ -24,7 +24,7 @@ public class Task {
     private String description;
     private boolean done;
     private LocalDateTime deadline;
-    private LocalDateTime createdOn;
+    @Access(private) private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 
     @PrePersist
