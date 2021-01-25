@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "tasks")
 @Data
 @NoArgsConstructor
-public class Task extends BaseAuditableEntity {
+public class Task extends Audit {
     @Id
     @GeneratedValue(generator = "incId")
     @GenericGenerator(name = "incId", strategy = "increment")
