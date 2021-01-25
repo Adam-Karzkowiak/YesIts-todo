@@ -28,6 +28,7 @@ public class Task {
     private Audit audit = new Audit();
 
     @ManyToOne
+    @JoinColumn(name = "task_group_id")
     private TaskGroup group;
 
     public void updateFrom(final Task source) {
