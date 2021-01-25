@@ -21,6 +21,8 @@ public class Task {
     private boolean done;
     private LocalDateTime deadline;
     @Embedded
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
     private Audit audit;
 
     public void updateFrom(final Task source) {
