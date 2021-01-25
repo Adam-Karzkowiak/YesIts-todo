@@ -7,4 +7,4 @@ create table task_groups
 alter table tasks
     add column task_group_id int null;
 alter table tasks
-    add foreign key (task_group_id) references task_groups (id, description, done);
+    add foreign key (task_group_id) references task_groups (id);
