@@ -1,7 +1,6 @@
 package com.app.YesItstodo.model;
 
 import lombok.*;
-import org.apache.tomcat.jni.Local;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
