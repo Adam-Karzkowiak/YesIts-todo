@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "tasks")
 @Data
 @NoArgsConstructor
-public class Task extends Audit {
+public class Task {
     @Id
     @GeneratedValue(generator = "incId")
     @GenericGenerator(name = "incId", strategy = "increment")
@@ -20,7 +20,8 @@ public class Task extends Audit {
     private String description;
     private boolean done;
     private LocalDateTime deadline;
-
+    @Embedded
+    private Audit audit;
 
     public void updateFrom(final Task source) {
         description = source.description;
