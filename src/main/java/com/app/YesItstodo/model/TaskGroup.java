@@ -26,7 +26,7 @@ public class TaskGroup {
     @Setter(AccessLevel.PRIVATE)
     private Audit audit = new Audit();
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Task> tasks;
 
 
