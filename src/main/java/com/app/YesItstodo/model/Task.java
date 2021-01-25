@@ -35,7 +35,7 @@ public class Task {
         description = source.description;
         done = source.done;
         deadline = source.deadline;
-
+        group = source.group;
     }
 
 }
