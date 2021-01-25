@@ -24,6 +24,11 @@ public class TaskGroup {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "group")
     private Set<Task> tasks;
 
+    @Embedded
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
+    private Audit audit = new Audit();
+
 
 
 }
