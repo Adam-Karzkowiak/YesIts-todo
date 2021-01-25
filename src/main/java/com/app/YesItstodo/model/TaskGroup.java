@@ -21,11 +21,6 @@ public class TaskGroup {
     private String description;
     private boolean done;
 
-    @Embedded
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    private Audit audit = new Audit();
-
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "group")
     private Set<Task> tasks;
 
