@@ -23,7 +23,7 @@ public class Task {
     @Embedded
     @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)
-    private Audit audit;
+    private Audit audit = new Audit();
 
     public void updateFrom(final Task source) {
         description = source.description;
