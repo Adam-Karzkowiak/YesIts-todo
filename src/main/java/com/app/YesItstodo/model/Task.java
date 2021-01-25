@@ -16,14 +16,19 @@ public class Task {
     @GeneratedValue(generator = "incId")
     @GenericGenerator(name = "incId", strategy = "increment")
     private int id;
+
     @NotBlank(message = "Tasks description must not be empty")
     private String description;
     private boolean done;
     private LocalDateTime deadline;
+
     @Embedded
     @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)
     private Audit audit = new Audit();
+
+    @ManyToOne
+    private TaskGroup group;
 
     public void updateFrom(final Task source) {
         description = source.description;
