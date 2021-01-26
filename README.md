@@ -1,3 +1,7 @@
 # YesIts-todo
-Shame on me-its todo list! 
-Postman collections (with api tests) : https://www.getpostman.com/collections/01bb46e7273894a84939
+Shame on me-its todo list!\
+-JAVA 14\
+-SPRING BOOT (DATA, JPA, VALIDATION, WEB)\
+-FLYWAYDB\
+-H2DATABASE\
+-LOMBOK\
