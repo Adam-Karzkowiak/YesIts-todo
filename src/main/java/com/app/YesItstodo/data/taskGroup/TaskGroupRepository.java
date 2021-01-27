@@ -1,4 +1,4 @@
-package com.app.YesItstodo.data;
+package com.app.YesItstodo.data.taskGroup;
 
 import com.app.YesItstodo.model.TaskGroup;
 

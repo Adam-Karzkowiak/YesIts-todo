@@ -1,6 +1,6 @@
 package com.app.YesItstodo.controller;
 
-import com.app.YesItstodo.data.TaskRepository;
+import com.app.YesItstodo.data.task.TaskRepository;
 import com.app.YesItstodo.model.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

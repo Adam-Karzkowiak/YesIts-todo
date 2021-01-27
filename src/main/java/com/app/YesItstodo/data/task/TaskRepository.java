@@ -1,4 +1,4 @@
-package com.app.YesItstodo.data;
+package com.app.YesItstodo.data.task;
 
 import com.app.YesItstodo.model.Task;
 import org.springframework.data.domain.Page;
