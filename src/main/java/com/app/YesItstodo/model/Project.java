@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Entity
 @Table(name = "projects")
-class Project {
+public class Project {
     @Id
     @GeneratedValue(generator = "incId")
     @GenericGenerator(name = "incId", strategy = "increment")
