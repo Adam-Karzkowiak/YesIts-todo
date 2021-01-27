@@ -1,8 +1,7 @@
 package com.app.YesItstodo.model;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -22,6 +21,8 @@ public class Project {
     @NotBlank
     String description;
 
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
     @OneToMany(mappedBy = "project")
     private Set<TaskGroup> groups;
 
