@@ -29,6 +29,9 @@ public class TaskGroup {
     @Setter(AccessLevel.PRIVATE)
     private Audit audit = new Audit();
 
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
 
 
 }
