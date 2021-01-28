@@ -26,7 +26,7 @@ public class Project {
     @OneToMany(mappedBy = "project")
     private Set<TaskGroup> groups;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "project")
     private Set<ProjectStep> steps;
 
 }
