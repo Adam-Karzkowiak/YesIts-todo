@@ -15,7 +15,7 @@ public class ProjectStep {
 
     @NotBlank
     private String description;
-
+    private int daysToDeadline;
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
