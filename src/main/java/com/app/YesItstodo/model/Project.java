@@ -26,4 +26,7 @@ public class Project {
     @OneToMany(mappedBy = "project")
     private Set<TaskGroup> groups;
 
+    @OneToMany(mappedBy = "project")
+    private Set<ProjectStep> steps;
+
 }
