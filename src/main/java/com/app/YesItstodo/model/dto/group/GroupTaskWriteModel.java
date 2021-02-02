@@ -1,4 +1,4 @@
-package com.app.YesItstodo.model.dto;
+package com.app.YesItstodo.model.dto.group;
 
 import com.app.YesItstodo.model.Task;
 import lombok.Data;
