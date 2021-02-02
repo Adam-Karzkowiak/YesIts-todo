@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Data
 public class GroupReadModel {
@@ -20,5 +21,9 @@ public class GroupReadModel {
                 .map(Task::getDeadline)
                 .max(LocalDateTime::compareTo)
                 .ifPresent(date->deadline=date);
+        tasks=source.getTasks()
+                .stream()
+                .map(GroupTaskReadModel::new)
+                .collect(Collectors.toSet());
     }
 }
