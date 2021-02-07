@@ -4,7 +4,6 @@ import com.app.YesItstodo.configuration.TaskConfigurationProperties;
 import com.app.YesItstodo.data.project.ProjectRepository;
 import com.app.YesItstodo.data.taskGroup.TaskGroupRepository;
 import com.app.YesItstodo.model.Project;
-import com.app.YesItstodo.model.dto.group.GroupReadModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
