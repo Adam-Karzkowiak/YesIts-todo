@@ -1,6 +1,7 @@
 package com.app.YesItstodo.service;
 
 import com.app.YesItstodo.TaskConfigurationProperties;
+import com.app.YesItstodo.data.task.TaskRepository;
 import com.app.YesItstodo.data.taskGroup.TaskGroupRepository;
 import com.app.YesItstodo.model.TaskGroup;
 import com.app.YesItstodo.model.dto.group.GroupReadModel;
@@ -14,11 +15,13 @@ import java.util.stream.Collectors;
 @Service
 public class TaskGroupService {
     private TaskGroupRepository repository;
+    private TaskRepository taskRepository;
     private TaskConfigurationProperties configurationProperties;
 
     @Autowired
-    TaskGroupService(final TaskGroupRepository repository, final TaskConfigurationProperties configurationProperties) {
+    TaskGroupService(final TaskGroupRepository repository, final TaskRepository taskRepository, final TaskConfigurationProperties configurationProperties) {
         this.repository = repository;
+        this.taskRepository = taskRepository;
         this.configurationProperties=configurationProperties;
     }
 
