@@ -4,14 +4,10 @@ import com.app.YesItstodo.configuration.TaskConfigurationProperties;
 import com.app.YesItstodo.data.project.ProjectRepository;
 import com.app.YesItstodo.data.taskGroup.TaskGroupRepository;
 import com.app.YesItstodo.model.Project;
-import com.app.YesItstodo.model.dto.group.GroupReadModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ProjectService {
@@ -32,8 +28,7 @@ public class ProjectService {
     }
 
     public Project create(Project saveEntity) {
-        Project result = projectRepository.save(saveEntity);
-        return result;
+        return projectRepository.save(saveEntity);
     }
 
 //    public GroupReadModel createGroup(int projectId, LocalDateTime deadline) {
