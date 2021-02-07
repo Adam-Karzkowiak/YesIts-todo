@@ -1,6 +1,6 @@
 package com.app.YesItstodo.controller;
 
-import com.app.YesItstodo.TaskConfigurationProperties;
+import com.app.YesItstodo.configuration.TaskConfigurationProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.app.YesItstodo;
+package com.app.YesItstodo.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
