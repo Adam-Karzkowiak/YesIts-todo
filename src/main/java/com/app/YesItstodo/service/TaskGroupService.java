@@ -1,6 +1,5 @@
 package com.app.YesItstodo.service;
 
-import com.app.YesItstodo.TaskConfigurationProperties;
 import com.app.YesItstodo.data.task.TaskRepository;
 import com.app.YesItstodo.data.taskGroup.TaskGroupRepository;
 import com.app.YesItstodo.model.TaskGroup;
@@ -16,13 +15,11 @@ import java.util.stream.Collectors;
 public class TaskGroupService {
     private TaskGroupRepository repository;
     private TaskRepository taskRepository;
-    private TaskConfigurationProperties configurationProperties;
 
     @Autowired
-    TaskGroupService(final TaskGroupRepository repository, final TaskRepository taskRepository, final TaskConfigurationProperties configurationProperties) {
+    TaskGroupService(final TaskGroupRepository repository, final TaskRepository taskRepository) {
         this.repository = repository;
         this.taskRepository = taskRepository;
-        this.configurationProperties=configurationProperties;
     }
 
 
@@ -38,7 +35,12 @@ public class TaskGroupService {
                 .collect(Collectors.toList());
     }
 
-    public void toggleGroup(int groupId){
-        repo
+    public void toggleGroup(int groupId) {
+        if (taskRepository.existsByDoneIsFalseAndGroup_Id(groupId)) {
+            throw new IllegalStateException("Group has undone tasks.");
+        }
+        TaskGroup result = repository.findById(groupId)
+                .orElseThrow(() -> new IllegalArgumentException("TaskGroup not found"));
+        result.setDone(!result.isDone());
     }
 }
