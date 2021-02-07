@@ -1,5 +1,6 @@
 package com.app.YesItstodo.service;
 
+import com.app.YesItstodo.TaskConfigurationProperties;
 import com.app.YesItstodo.data.taskGroup.TaskGroupRepository;
 import com.app.YesItstodo.model.TaskGroup;
 import com.app.YesItstodo.model.dto.group.GroupReadModel;
@@ -13,10 +14,12 @@ import java.util.stream.Collectors;
 @Service
 public class TaskGroupService {
     private TaskGroupRepository repository;
+    private TaskConfigurationProperties configurationProperties;
 
     @Autowired
-    TaskGroupService(final TaskGroupRepository repository) {
+    TaskGroupService(final TaskGroupRepository repository, final TaskConfigurationProperties configurationProperties) {
         this.repository = repository;
+        this.configurationProperties=configurationProperties;
     }
 
 
@@ -32,4 +35,7 @@ public class TaskGroupService {
                 .collect(Collectors.toList());
     }
 
+    public void toggleGroup(int groupId){
+        repo
+    }
 }
