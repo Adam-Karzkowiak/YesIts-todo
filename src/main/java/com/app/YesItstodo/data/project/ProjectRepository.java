@@ -5,7 +5,7 @@ import com.app.YesItstodo.model.Project;
 import java.util.List;
 import java.util.Optional;
 
-interface ProjectRepository {
+public interface ProjectRepository {
 
     List<Project> findAll();
 
